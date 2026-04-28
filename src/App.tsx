@@ -10,7 +10,10 @@ import {
   CheckCircle2,
   Star,
   Quote,
-  ShieldCheck
+  ShieldCheck,
+  ShoppingCart,
+  TrendingUp,
+  Award
 } from 'lucide-react';
 
 export default function App() {
@@ -163,45 +166,122 @@ export default function App() {
         </div>
       </section>
 
-      {/* 3. SERVIÇOS / CARDS DE IMAGENS */}
+      {/* 3. SERVIÇOS / SOLUÇÕES DE CONVERSÃO */}
       <section id="servicos" className="py-24 md:py-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
              <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-ferrari-red/30 bg-ferrari-red/10 text-ferrari-red text-xs font-bold tracking-widest uppercase">
-              Nosso Acervo Premium
+              O que fazemos
             </div>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Projetos de Alto Nível</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl">O que entregamos para acelerar os resultados da sua empresa.</p>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Soluções para Maximizar Vendas</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl">Entregamos estruturas prontas para captar clientes no automático.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { title: "Site Institucional Arquitetura", img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200" },
-              { title: "E-commerce Premium", img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1200" },
-              { title: "Landing Page SaaS", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" },
-              { title: "Branding Luxo", img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=1200" }
+              { 
+                title: "Site Profissional para Empresas", 
+                text: "Passe credibilidade e tenha presença forte online.",
+                img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200",
+                icon: <Monitor className="w-6 h-6" />
+              },
+              { 
+                title: "Página que Gera Leads Todos os Dias", 
+                text: "Capte clientes no automático com alta conversão.",
+                img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
+                icon: <TrendingUp className="w-6 h-6" />
+              },
+              { 
+                title: "Loja Virtual que Vende de Verdade", 
+                text: "Venda seus produtos 24 horas por dia.",
+                img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1200",
+                icon: <ShoppingCart className="w-6 h-6" />
+              },
+              { 
+                title: "Marca Premium e Visual Forte", 
+                text: "Sua empresa com aparência de autoridade.",
+                img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=1200",
+                icon: <Award className="w-6 h-6" />
+              }
             ].map((work, i) => (
               <motion.div 
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="group relative rounded-3xl overflow-hidden aspect-[16/10] bg-black border border-white/5 hover:border-ferrari-red/50 hover-glow transition-all duration-500 cursor-pointer"
+                className="group relative rounded-3xl overflow-hidden bg-black-card border border-white/5 hover:border-ferrari-red/50 hover-glow transition-all duration-500 cursor-pointer flex flex-col h-full"
               >
-                <div className="absolute inset-0 bg-ferrari-red/10 mix-blend-overlay z-10 opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <img src={work.img} alt={work.title} className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black-premium/90 via-black-premium/30 to-transparent flex flex-col justify-end p-8 md:p-10 z-20">
-                  <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{work.title}</h3>
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                     <span className="inline-flex items-center gap-2 text-ferrari-red font-semibold">
-                       Ver projeto <ArrowRight className="w-4 h-4" />
-                     </span>
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <div className="absolute inset-0 bg-ferrari-red/10 mix-blend-overlay z-10 opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <img src={work.img} alt={work.title} className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black-card via-black-card/50 to-transparent z-20"></div>
+                </div>
+                
+                <div className="relative z-30 p-8 md:p-10 -mt-20 flex-grow flex flex-col">
+                  <div className="w-14 h-14 rounded-2xl bg-black-premium border border-white/10 flex items-center justify-center text-ferrari-red mb-6 box-glow">
+                    {work.icon}
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-3 group-hover:text-ferrari-red transition-colors duration-300">{work.title}</h3>
+                  <p className="text-gray-400 text-lg mb-8 flex-grow">{work.text}</p>
+                  
+                  <div className="mt-auto">
+                     <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-white/5 border border-white/10 text-white font-medium hover:bg-ferrari-red hover:border-ferrari-red transition-all duration-300">
+                       Quero esse projeto <ArrowRight className="w-5 h-5" />
+                     </a>
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 3B. OFERTAS CRIADAS PARA CONVERTER */}
+      <section className="py-24 px-6 bg-black-premium relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-ferrari-red/10 blur-[150px] rounded-full pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-ferrari-red/10 blur-[150px] rounded-full pointer-events-none -translate-x-1/2 translate-y-1/2"></div>
+        
+        <div className="max-w-6xl mx-auto relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="bg-black-card border border-ferrari-red/20 p-10 md:p-20 rounded-[40px] box-glow"
+          >
+            <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-16">
+              Ofertas Criadas <br className="hidden md:block"/>
+              <span className="text-ferrari-red text-glow">Para Converter</span>
+            </h2>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-6 mb-20 text-left">
+              {[
+                "Design estratégico",
+                "Copy persuasiva",
+                "Botões que geram clique",
+                "Estrutura pensada para vendas",
+                "WhatsApp integrado",
+                "Visual premium"
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-ferrari-red/10 border border-ferrari-red/20 flex items-center justify-center shrink-0">
+                    <CheckCircle2 className="w-6 h-6 text-ferrari-red" />
+                  </div>
+                  <span className="text-white font-medium text-lg lg:text-xl">{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-10 py-6 md:px-16 md:py-8 rounded-full bg-ferrari-red text-white font-black text-xl md:text-2xl hover:bg-ferrari-dark transition-all animate-pulse-glow tracking-widest uppercase shadow-[0_0_30px_rgba(255,26,26,0.6)]"
+            >
+              QUERO MAIS CLIENTES <ArrowRight className="w-6 h-6 md:w-8 md:h-8" />
+            </a>
+          </motion.div>
         </div>
       </section>
 
