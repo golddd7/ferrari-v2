@@ -8,20 +8,22 @@ import {
   HeadphonesIcon,
   Zap,
   CheckCircle2,
-  Star
+  Star,
+  Quote,
+  ShieldCheck
 } from 'lucide-react';
 
 export default function App() {
-  const whatsappLink = "https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20acelerar%20meus%20resultados%20com%20a%20Ferrari%20Digital!";
+  const whatsappLink = "https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20acelerar%20minha%20empresa%20com%20a%20Ferrari%20Digital!";
 
   return (
-    <div className="min-h-screen bg-black-premium text-gray-200 overflow-x-hidden font-sans">
+    <div className="min-h-screen bg-black-premium text-gray-200 overflow-x-hidden font-sans selection:bg-ferrari-red selection:text-white">
       
       {/* 0. NAVBAR */}
-      <header className="fixed top-0 w-full z-50 bg-black-premium/80 backdrop-blur-md border-b border-white/5">
+      <header className="fixed top-0 w-full z-50 bg-black-premium/90 backdrop-blur-md border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-ferrari-red flex items-center justify-center font-display font-bold text-white shadow-[0_0_15px_rgba(255,0,0,0.5)]">
+            <div className="w-8 h-8 rounded-full bg-ferrari-red flex items-center justify-center font-display font-bold text-white shadow-[0_0_15px_rgba(255,26,26,0.5)]">
               F
             </div>
             <span className="font-display font-bold text-xl tracking-wide text-white">
@@ -29,16 +31,16 @@ export default function App() {
             </span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
-            <a href="#servicos" className="hover:text-ferrari-red transition-colors">Serviços</a>
+            <a href="#servicos" className="hover:text-ferrari-red transition-colors">Projetos</a>
             <a href="#diferenciais" className="hover:text-ferrari-red transition-colors">Diferenciais</a>
             <a href="#planos" className="hover:text-ferrari-red transition-colors">Planos</a>
-            <a href="#portfolio" className="hover:text-ferrari-red transition-colors">Portfólio</a>
+            <a href="#depoimentos" className="hover:text-ferrari-red transition-colors">Depoimentos</a>
           </div>
           <a
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-full bg-white/5 border border-white/10 hover:border-ferrari-red hover:bg-ferrari-red/10 transition-all font-medium text-sm hidden md:block"
+            className="px-6 py-2.5 rounded-full bg-ferrari-red text-white hover:bg-ferrari-dark transition-all font-semibold text-sm hidden md:block shadow-[0_0_15px_rgba(255,26,26,0.3)] hover:shadow-[0_0_25px_rgba(255,26,26,0.6)]"
           >
             Falar no WhatsApp
           </a>
@@ -46,318 +48,353 @@ export default function App() {
       </header>
 
       {/* 1. HERO SECTION */}
-      <section className="relative pt-40 pb-20 md:pt-52 md:pb-32 px-6 flex flex-col items-center justify-center text-center">
+      <section className="relative pt-40 pb-24 md:pt-60 md:pb-32 px-6 flex flex-col items-center justify-center text-center">
         {/* Background Effects */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-ferrari-red/20 blur-[120px] rounded-full pointer-events-none"></div>
-        <div className="absolute top-0 w-full h-[500px] bg-gradient-to-b from-ferrari-red/5 to-transparent pointer-events-none"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-ferrari-red/15 blur-[150px] rounded-full pointer-events-none"></div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative z-10 max-w-4xl"
+          className="relative z-10 max-w-5xl"
         >
-          <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-ferrari-red/30 bg-ferrari-red/10 text-ferrari-red text-sm font-medium tracking-wide uppercase">
-            Agência de Performance Premium
+          <div className="inline-block mb-6 px-5 py-2 rounded-full border border-ferrari-red/30 bg-ferrari-red/10 text-ferrari-red text-xs md:text-sm font-bold tracking-widest uppercase">
+            Sua agência de performance premium
           </div>
           
-          <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-8">
-            Acelere sua presença digital com a <span className="text-ferrari-red text-glow">Ferrari Digital</span>
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.05] mb-8">
+            Sua empresa merece <br className="hidden md:block"/>
+            <span className="text-ferrari-red text-glow">vender no automático.</span>
           </h1>
           
-          <p className="text-lg md:text-2xl text-gray-400 max-w-2xl mx-auto mb-12 font-light">
-            Sites, landing pages e branding criados para gerar autoridade e vendas. Domine o seu nicho com um posicionamento de alto valor.
+          <p className="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 font-light leading-relaxed">
+            Criamos sites premium, landing pages e estruturas digitais feitas para atrair clientes e gerar vendas.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-16">
             <a
               href="#planos"
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-ferrari-red text-white font-semibold text-lg hover:bg-ferrari-dark transition-all box-glow flex items-center justify-center gap-2 group"
+              className="w-full sm:w-auto px-10 py-5 rounded-full bg-ferrari-red text-white font-bold text-lg hover:bg-ferrari-dark transition-all animate-pulse-glow flex items-center justify-center gap-3 group"
             >
               Solicitar orçamento
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 border border-white/20 hover:bg-white/10 text-white font-semibold text-lg transition-all flex items-center justify-center"
+              href="#servicos"
+              className="w-full sm:w-auto px-10 py-5 rounded-full bg-white/5 border border-white/20 hover:bg-white/10 hover:border-white/40 text-white font-semibold text-lg transition-all flex items-center justify-center"
             >
-              Falar no WhatsApp
+              Ver projetos
             </a>
           </div>
+
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 1 }}
+            className="flex flex-wrap justify-center gap-6 md:gap-12 text-sm text-gray-400 font-medium"
+          >
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-5 h-5 text-ferrari-red" />
+              <span>+50 projetos entregues</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-5 h-5 text-ferrari-red" />
+              <span>Atendimento rápido</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-5 h-5 text-ferrari-red" />
+              <span>Suporte humanizado</span>
+            </div>
+          </motion.div>
         </motion.div>
       </section>
 
-      {/* 2. PROVA SOCIAL */}
-      <section className="py-16 border-y border-white/5 bg-black-card/50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <p className="text-gray-400 font-medium tracking-wide uppercase text-sm mb-4">Empresas e criadores já estão acelerando seus resultados conosco</p>
-            <div className="flex justify-center gap-1.5 mb-2">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 fill-ferrari-red text-ferrari-red drop-shadow-[0_0_8px_rgba(255,0,0,0.8)]" />
+      {/* 2. POR QUE ESCOLHER */}
+      <section id="diferenciais" className="py-24 px-6 bg-black-card border-y border-white/5 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-ferrari-red/5 blur-[150px] rounded-full pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
+        
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="lg:w-1/2"
+          >
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              Não entregamos apenas design. <br/>
+              <span className="text-ferrari-red text-glow">Entregamos uma máquina de vendas sofisticada.</span>
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-4 mt-12">
+              {[
+                "Atendimento rápido", 
+                "Estratégia focada em vendas",
+                "Equipe preparada",
+                "Design premium",
+                "Entrega profissional",
+                "Suporte humanizado"
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-ferrari-red/10 border border-ferrari-red/20 flex items-center justify-center shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-ferrari-red" />
+                  </div>
+                  <span className="text-gray-200 font-medium text-lg">{item}</span>
+                </div>
               ))}
             </div>
-            <p className="text-white/80 font-medium">Nota máxima em satisfação</p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/5">
-            {[
-              { label: "Clientes Atendidos", value: "+150" },
-              { label: "Projetos Entregues", value: "320" },
-              { label: "Aumento em Conversão", value: "3x" },
-              { label: "Taxa de Satisfação", value: "99%" },
-            ].map((stat, i) => (
-              <div key={i} className="text-center px-4">
-                <div className="font-display text-4xl md:text-5xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-gray-500 text-sm font-medium uppercase tracking-wider">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="lg:w-1/2 relative w-full"
+          >
+             <div className="aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden border border-white/10 box-glow relative group">
+               <div className="absolute inset-0 bg-ferrari-red/20 mix-blend-overlay z-10 group-hover:bg-ferrari-red/10 transition-colors duration-500"></div>
+               <img 
+                 src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1200" 
+                 alt="Equipe Premium Ferrari Digital"
+                 className="w-full h-full object-cover grayscale mix-blend-luminosity group-hover:scale-105 transition-transform duration-700"
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-black-premium via-transparent to-transparent z-10"></div>
+             </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* 3. SERVIÇOS */}
+      {/* 3. SERVIÇOS / CARDS DE IMAGENS */}
       <section id="servicos" className="py-24 md:py-32 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">Serviços Premium</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-lg">Soluções completas e de alta performance para escalar o seu negócio e dominar o mercado.</p>
+          <div className="text-center mb-20">
+             <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-ferrari-red/30 bg-ferrari-red/10 text-ferrari-red text-xs font-bold tracking-widest uppercase">
+              Nosso Acervo Premium
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Projetos de Alto Nível</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl">O que entregamos para acelerar os resultados da sua empresa.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { icon: <Monitor />, title: "Criação de Sites Profissionais", desc: "Plataformas robustas, rápidas e com design exclusivo para sua marca." },
-              { icon: <Layout />, title: "Landing Pages de Alta Conversão", desc: "Páginas otimizadas para transformar visitantes em clientes qualificados." },
-              { icon: <Palette />, title: "Branding e Identidade Visual", desc: "Construção de marcas memoráveis que transmitem autoridade e luxo." },
-              { icon: <Share2 />, title: "Gestão para Redes Sociais", desc: "Posicionamento estratégico para influenciadores e marcas premium." },
-              { icon: <HeadphonesIcon />, title: "Suporte Estratégico", desc: "Consultoria contínua para escalar suas vendas com funis eficientes." },
-              { icon: <Zap />, title: "Soluções Rápidas", desc: "Entregas ágeis sem comprometer a qualidade e a estética premium." }
-            ].map((service, i) => (
-              <motion.div
+              { title: "Site Institucional Arquitetura", img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200" },
+              { title: "E-commerce Premium", img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1200" },
+              { title: "Landing Page SaaS", img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200" },
+              { title: "Branding Luxo", img: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=1200" }
+            ].map((work, i) => (
+              <motion.div 
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-black-card p-8 rounded-3xl border border-white/5 hover:border-ferrari-red/50 hover-glow transition-all group"
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="group relative rounded-3xl overflow-hidden aspect-[16/10] bg-black border border-white/5 hover:border-ferrari-red/50 hover-glow transition-all duration-500 cursor-pointer"
               >
-                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-ferrari-red mb-6 group-hover:bg-ferrari-red group-hover:text-white transition-colors">
-                  {service.icon}
+                <div className="absolute inset-0 bg-ferrari-red/10 mix-blend-overlay z-10 opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <img src={work.img} alt={work.title} className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black-premium/90 via-black-premium/30 to-transparent flex flex-col justify-end p-8 md:p-10 z-20">
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{work.title}</h3>
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                     <span className="inline-flex items-center gap-2 text-ferrari-red font-semibold">
+                       Ver projeto <ArrowRight className="w-4 h-4" />
+                     </span>
+                  </div>
                 </div>
-                <h3 className="font-display text-xl font-bold text-white mb-3">{service.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{service.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. DIFERENCIAIS */}
-      <section id="diferenciais" className="py-24 px-6 bg-black-card border-y border-white/5 relative overflow-hidden">
-        {/* Subtle Background Red Glow */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-ferrari-red/10 blur-[120px] rounded-full pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
-        
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
-          <div className="lg:w-1/2">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">Por que escolher a Ferrari Digital?</h2>
-            <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-              Não entregamos apenas design. Entregamos uma máquina de vendas sofisticada. Nossa metodologia combina estética de alto nível com engenharia de conversão.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                "Atendimento Rápido", 
-                "Design Premium", 
-                "Estratégia focada em vendas",
-                "Entrega Profissional",
-                "Equipe Preparada",
-                "Suporte Humanizado"
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-ferrari-red" />
-                  <span className="text-gray-200 font-medium">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="lg:w-1/2 relative">
-             <div className="aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden border border-white/10 box-glow relative">
-               <div className="absolute inset-0 bg-ferrari-red/20 mix-blend-overlay z-10"></div>
-               <img 
-                 src="https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&q=80&w=1200" 
-                 alt="Ferrari Digital Premium Workspace"
-                 className="w-full h-full object-cover grayscale"
-               />
-             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. PACKS / PLANOS */}
-      <section id="planos" className="py-24 md:py-32 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">Investimento</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-lg">Soluções sob medida para o tamanho da sua ambição.</p>
+      {/* 4. PLANOS (COM PREÇOS) */}
+      <section id="planos" className="py-24 md:py-32 px-6 bg-black-card border-y border-white/5 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(255,26,26,0.08)_0%,transparent_70%)] pointer-events-none"></div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">Investimento</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">Selecione o plano ideal para acelerar as vendas do seu negócio.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
             {/* Starter */}
-            <div className="bg-black-card p-8 rounded-3xl border border-white/5 flex flex-col relative overflow-hidden">
-              <h3 className="font-display text-2xl font-bold text-white mb-2">Starter</h3>
-              <p className="text-gray-400 text-sm mb-6">Para quem quer começar com o pé direito.</p>
-              <div className="mb-8 flex-grow">
-                <ul className="space-y-4">
-                  {['Landing Page Single', 'Design Responsivo', 'Copywriting Básico', 'SEO On-Page Bás.', 'Suporte por 15 dias'].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-gray-300 text-sm">
-                      <CheckCircle2 className="w-5 h-5 text-gray-600" />
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-black-premium p-10 rounded-3xl border border-white/10 flex flex-col relative overflow-hidden hover:border-white/30 transition-colors"
+            >
+              <h3 className="font-display text-2xl font-bold text-white mb-1">STARTER</h3>
+              <div className="flex items-baseline gap-1 mb-8">
+                <span className="text-gray-400 font-medium">R$</span>
+                <span className="text-4xl font-display font-bold text-white">497</span>
+              </div>
+              
+              <div className="mb-10 flex-grow">
+                <ul className="space-y-5">
+                  {['Landing page simples', 'WhatsApp integrado', 'Design premium', 'Entrega rápida'].map((item, i) => (
+                    <li key={i} className="flex items-center gap-4 text-gray-300 text-base">
+                      <CheckCircle2 className="w-5 h-5 text-gray-600 shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-center font-semibold transition-all">
-                Quero esse plano
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-full py-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-white text-center font-bold text-lg transition-all">
+                Começar Agora
               </a>
-            </div>
+            </motion.div>
 
             {/* Pro - Destaque */}
-            <div className="bg-gradient-to-b from-black-card to-[#2a0505] p-8 rounded-3xl border border-ferrari-red/50 box-glow transform md:-translate-y-4 flex flex-col relative overflow-hidden">
-              <div className="absolute top-0 inset-x-0 h-1 bg-ferrari-red"></div>
-              <div className="absolute top-5 right-5 bg-ferrari-red px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase">Popular</div>
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-gradient-to-b from-black-card to-[#2a0505] p-10 rounded-3xl border border-ferrari-red box-glow transform lg:-translate-y-6 flex flex-col relative overflow-hidden z-10"
+            >
+              <div className="absolute top-0 inset-x-0 h-1.5 bg-ferrari-red"></div>
+              <div className="absolute top-6 right-6 bg-ferrari-red px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase text-white animate-pulse">Mais Escolhido</div>
               
-              <h3 className="font-display text-2xl font-bold text-white mb-2">Pro</h3>
-              <p className="text-gray-400 text-sm mb-6">O motor ideal para escalar vendas e conversão.</p>
-              <div className="mb-8 flex-grow">
-                <ul className="space-y-4">
-                  {['Site Institucional 5 pág.', 'Landing Page Alta Conv.', 'Design Premium Exclusivo', 'Copy Persuasiva Avançada', 'Integrações (Pixel, GA4)', 'Suporte por 30 dias'].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-white text-sm">
-                      <CheckCircle2 className="w-5 h-5 text-ferrari-red" />
+              <h3 className="font-display text-2xl font-bold text-ferrari-red mb-1">PRO</h3>
+              <div className="flex items-baseline gap-1 mb-8">
+                <span className="text-gray-400 font-medium">R$</span>
+                <span className="text-5xl font-display font-bold text-white">997</span>
+              </div>
+              
+              <div className="mb-10 flex-grow">
+                <ul className="space-y-5">
+                  {['Landing page completa', 'Copy estratégica', 'Alta conversão', 'SEO básico', 'WhatsApp integrado'].map((item, i) => (
+                    <li key={i} className="flex items-center gap-4 text-white text-base font-medium">
+                      <CheckCircle2 className="w-5 h-5 text-ferrari-red shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-full py-4 rounded-xl bg-ferrari-red hover:bg-ferrari-dark text-white text-center font-bold transition-all shadow-[0_0_20px_rgba(255,0,0,0.4)]">
-                Quero esse plano
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-full py-5 rounded-xl bg-ferrari-red hover:bg-ferrari-dark text-white text-center font-bold text-lg transition-all shadow-[0_0_20px_rgba(255,26,26,0.4)] hover:shadow-[0_0_30px_rgba(255,26,26,0.6)]">
+                Quero vender mais
               </a>
-            </div>
+            </motion.div>
 
             {/* Elite */}
-            <div className="bg-black-card p-8 rounded-3xl border border-white/5 flex flex-col relative overflow-hidden">
-              <h3 className="font-display text-2xl font-bold text-white mb-2">Elite</h3>
-              <p className="text-gray-400 text-sm mb-6">A experiência completa e personalizada.</p>
-              <div className="mb-8 flex-grow">
-                <ul className="space-y-4">
-                  {['Plataforma sob medida', 'Identidade Visual Completa', 'Gestão de Redes Sociais', 'Estratégia de Lançamento', 'SEO Avançado Completo', 'Suporte Prioritário'].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-gray-300 text-sm">
-                      <CheckCircle2 className="w-5 h-5 text-gray-400" />
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-black-premium p-10 rounded-3xl border border-white/10 flex flex-col relative overflow-hidden hover:border-white/30 transition-colors"
+            >
+              <h3 className="font-display text-2xl font-bold text-white mb-1">ELITE</h3>
+              <div className="flex items-baseline gap-1 mb-8">
+                <span className="text-gray-400 font-medium">R$</span>
+                <span className="text-4xl font-display font-bold text-white">1.997</span>
+              </div>
+              
+              <div className="mb-10 flex-grow">
+                <ul className="space-y-5">
+                  {['Site premium completo', 'Branding incluso', 'Estratégia personalizada', 'Performance máxima', 'Suporte VIP'].map((item, i) => (
+                    <li key={i} className="flex items-center gap-4 text-gray-300 text-base">
+                      <CheckCircle2 className="w-5 h-5 text-gray-600 shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-center font-semibold transition-all">
-                Quero esse plano
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-full py-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-white text-center font-bold text-lg transition-all">
+                Quero nível elite
               </a>
-            </div>
-          </div>
-          
-          <div className="mt-12 text-center text-gray-400">
-            <p>Ou solicite um <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="text-ferrari-red hover:underline font-medium">orçamento personalizado</a>.</p>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* 6. PORTFÓLIO */}
-      <section id="portfolio" className="py-24 bg-black-card border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">Nosso Acervo Premium</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-lg">Confira o nível de excelência que entregamos aos nossos parceiros.</p>
+      {/* 5. DEPOIMENTOS */}
+      <section id="depoimentos" className="py-24 md:py-32 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">O que dizem nossos clientes</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800", title: "Landing Page SaaS" },
-              { img: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800", title: "Branding Luxo" },
-              { img: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&q=80&w=800", title: "Site Institucional Arquitetura" },
-              { img: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&q=80&w=800", title: "E-Commerce Premium" }
-            ].map((work, i) => (
-              <div key={i} className="group relative rounded-3xl overflow-hidden aspect-[4/3] bg-black border border-white/10">
-                <div className="absolute inset-0 bg-ferrari-red/20 mix-blend-overlay z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <img src={work.img} alt={work.title} className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex items-end p-8 z-20">
-                  <h3 className="text-2xl font-display font-bold text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{work.title}</h3>
+              { text: "Depois do site novo comecei receber leads toda semana. A estrutura foca mesmo em conversão.", author: "João, Empresário" },
+              { text: "Visual absurdo e atendimento rápido. A entrega foi impecável do início ao fim.", author: "Lucas, Loja Online" },
+              { text: "Profissionalismo do início ao fim. Minha marca agora transmite o luxo que os meus serviços oferecem.", author: "Mariana, Estética" }
+            ].map((dep, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-black-card border border-white/5 p-10 rounded-3xl hover:border-ferrari-red/30 transition-colors relative"
+              >
+                <Quote className="w-10 h-10 text-ferrari-red/20 absolute top-8 right-8" />
+                <div className="flex gap-1 mb-6">
+                  {[...Array(5)].map((_, j) => (
+                    <Star key={j} className="w-5 h-5 fill-ferrari-red text-ferrari-red" />
+                  ))}
                 </div>
-              </div>
+                <p className="text-gray-300 text-lg leading-relaxed mb-8 italic">"{dep.text}"</p>
+                <span className="font-display font-bold text-white">— {dep.author}</span>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* 6. GARANTIA */}
+      <section className="py-24 px-6 bg-black-card border-y border-white/5 relative">
+         <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent,rgba(255,26,26,0.03),transparent)]"></div>
+         <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
+            <div className="w-20 h-20 rounded-full bg-ferrari-red/10 border border-ferrari-red/30 flex items-center justify-center mb-8 box-glow">
+              <ShieldCheck className="w-10 h-10 text-ferrari-red" />
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">Compromisso com resultado.</h2>
+            <p className="text-xl text-gray-400 mb-0">Projeto feito com estratégia, visual premium e suporte total durante a entrega.</p>
+         </div>
+      </section>
+
       {/* 7. CTA FINAL */}
       <section className="py-32 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,0,0,0.15)_0%,transparent_70%)]"></div>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="font-display text-5xl md:text-7xl font-bold tracking-tight text-white mb-8">
-            Pronto para acelerar <br/> seus resultados?
+        <div className="absolute inset-0 bg-black-premium"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(255,26,26,0.15)_0%,transparent_60%)]"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop')] mix-blend-overlay opacity-10"></div>
+        
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <h2 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8">
+            Pronto para acelerar <br/> <span className="text-ferrari-red text-glow">sua empresa?</span>
           </h2>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <p className="text-xl md:text-2xl text-gray-400 mb-16">
+            Solicite agora seu projeto e fale direto no WhatsApp.
+          </p>
+          <div className="flex justify-center">
             <a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-10 py-5 rounded-full bg-ferrari-red text-white font-bold text-xl hover:bg-ferrari-dark transition-all box-glow flex items-center justify-center gap-3"
+              className="px-12 py-6 md:px-16 md:py-8 rounded-full bg-ferrari-red text-white font-black text-xl md:text-3xl hover:bg-ferrari-dark transition-all animate-pulse-glow flex items-center justify-center gap-4 tracking-wide shadow-[0_0_30px_rgba(255,26,26,0.5)] border border-ferrari-red/50"
             >
-              Chamar no WhatsApp
-            </a>
-            <a
-              href="#planos"
-              className="w-full sm:w-auto px-10 py-5 rounded-full bg-transparent border border-white/30 hover:border-white hover:bg-white/5 text-white font-semibold text-xl transition-all flex items-center justify-center"
-            >
-              Solicitar orçamento
+              CHAMAR NO WHATSAPP
             </a>
           </div>
         </div>
       </section>
 
       {/* 8. FOOTER */}
-      <footer className="bg-black pt-20 pb-10 px-6 border-t border-white/10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 rounded-full bg-ferrari-red flex items-center justify-center font-display font-bold text-white">F</div>
-              <span className="font-display font-bold text-xl tracking-wide">FERRARI DIGITAL</span>
+      <footer className="bg-black pt-16 pb-12 px-6 border-t border-white/10">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-ferrari-red flex items-center justify-center font-display font-bold text-white text-xl">F</div>
+            <div className="flex flex-col">
+              <span className="font-display font-bold text-xl tracking-wider text-white">FERRARI DIGITAL</span>
+              <span className="text-gray-500 text-sm">© {new Date().getFullYear()}. Todos os direitos reservados.</span>
             </div>
-            <p className="text-gray-500 max-w-sm">
-              Potencializamos marcas com design de elite e estratégias de conversão de alto impacto.
-            </p>
           </div>
-          <div>
-            <h4 className="text-white font-bold mb-6 font-display">Links Rápidos</h4>
-            <ul className="space-y-3">
-              <li><a href="#servicos" className="text-gray-500 hover:text-white transition-colors">Serviços</a></li>
-              <li><a href="#diferenciais" className="text-gray-500 hover:text-white transition-colors">Diferenciais</a></li>
-              <li><a href="#planos" className="text-gray-500 hover:text-white transition-colors">Planos</a></li>
-              <li><a href="#portfolio" className="text-gray-500 hover:text-white transition-colors">Portfólio</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-bold mb-6 font-display">Contato</h4>
-            <ul className="space-y-3">
-              <li><a href={whatsappLink} className="text-gray-500 hover:text-ferrari-red transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4"/> WhatsApp</a></li>
-              <li><a href="#" className="text-gray-500 hover:text-ferrari-red transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4"/> Instagram</a></li>
-              <li><a href="mailto:contato@ferraridigital.com" className="text-gray-500 hover:text-ferrari-red transition-colors flex items-center gap-2"><ArrowRight className="w-4 h-4"/> Email</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-600">
-          <p>Ferrari Digital © {new Date().getFullYear()}. Todos os direitos reservados.</p>
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-gray-300 transition-colors">Termos de Uso</a>
-            <a href="#" className="hover:text-gray-300 transition-colors">Privacidade</a>
+          
+          <div className="flex gap-8">
+            <a href="#" className="font-medium text-gray-400 hover:text-white transition-colors">Instagram</a>
+            <a href={whatsappLink} className="font-medium text-gray-400 hover:text-white transition-colors">WhatsApp</a>
+            <a href="mailto:contato@ferraridigital.com" className="font-medium text-gray-400 hover:text-white transition-colors">Email</a>
           </div>
         </div>
       </footer>
